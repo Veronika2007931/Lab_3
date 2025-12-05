@@ -9,7 +9,7 @@ namespace ProgramFile
    class Program{
     static void Main(string[] args){
     Console.OutputEncoding = System.Text.Encoding.UTF8;
-    Console.WriteLine("ПРОГРАМА ЗАПУСТИЛАСЯ!");
+    
     User richUser = new User("Veronika", 100.20m );
     VideoServiceProxy proxy1 = new VideoServiceProxy(richUser);
 
@@ -23,7 +23,7 @@ namespace ProgramFile
     proxy2.UploadVideo("MyVocation.mp4");
     proxy2.CreateVideoCatalog();
 
-    Console.ReadKey();
+    
     IDog myDog = new Dog("Рекс", "Вівчарка", 35.5);
     myDog.DisplayInfo();
     myDog.PerformCommands();
