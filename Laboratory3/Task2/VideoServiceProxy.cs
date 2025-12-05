@@ -45,7 +45,7 @@ namespace VideoServiceProxyClass{
         public void CreateVideoCatalog()
         {
             if (CheckAccess()){
-                Console.WriteLine($" Доступ дозволено для {_user.Name}.");
+    
                 GetService().CreateVideoCatalog();
 
             }
