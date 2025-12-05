@@ -1,98 +1,29 @@
-﻿
-namespace VideoServiceFile
+﻿using InterfaceFile;
+using UserClass;
+using VideoServiceProxyClass;
+
+namespace ProgramFile
 {
-    public interface IVideoService
-    {
-        void UploadVideo(string videoName);
-        void CreateVideoCatalog();
-        void ProcessVideo(string videoName);
-    }
+   class Program{
+    static void Main(string[] args){
+    Console.OutputEncoding = System.Text.Encoding.UTF8;
+    User richUser = new User("Veronika", 100.20m );
+    VideoServiceProxy proxy1 = new VideoServiceProxy(richUser);
 
-    public class VideoService : IVideoService
-    {
-        public void UploadVideo(string videoName)
-        {
-            Console.WriteLine($"Відео  '{videoName}' успішно завантажено на сервер");
-        }   
+    proxi1.UploadVideo("MyVocation.mp4");
+    proxi1.CreateVideoCatalog();
 
-        public void CreateVideoCatalog()
-        {
-            Console.WriteLine("Створення відеокаталогу... Готово!");
-        }
+    User poorUser = new User("Volodymyr", 5.30m);
+    VideoServiceProxy proxy2 = new VideoServiceProxy(poorUser);
 
-        public void ProcessVideo(string videoName)
-        {
-            Console.WriteLine($"Відео '{videoName}' успішно оброблене");
-        }
-    }
 
-    public class User
-    {
-        public string Name {get; set;}
-        public decimal MoneyAmount {get; set;}
+    proxi2.UploadVideo("MyVocation.mp4");
+    proxi2.CreateVideoCatalog();
 
-        public User(string name, decimal moneyAmount)
-        {
-            Name = name;
-            MoneyAmount = moneyAmount;
-        }
-    }
-    public class VideoServiceProxy : IVideoService
-    {
-        private VideoService _videoService;
-        public User _user;
+    Console.ReadKey();
 
-        public VideoServiceProxy(User user)
-        {
-            _user = user;
-        }
-        private VideoService GetService()
-        {
-            if(_videoService == null)
-            {
-                _videoService = new VideoService();
-            }
-            return _videoService;
-        }
-        private bool CheckAccess()
-        {
-            if(_user.MoneyAmount > 10)
-            {
-                return true;
-            }
-            else
-            {
-                Console.WriteLine("Недостатньо коштів для виконання операції");
-                return false;
-            }
-        }
-        
-        public void UploadVideo(string videoName)
-        {
-            if (CheckAccess())
-            {
-                Console.WriteLine($"Доступ дозволено для {_user.Name}.");
-                GetService().UploadVideo(videoName);
-            }
-        }
+   }
+   }
 
-        public void CreateVideoCatalog()
-        {
-            if (CheckAccess()){
-                Console.WriteLine($" Доступ дозволено для {_user.Name}.");
-                GetService().CreateVideoCatalog();
 
-            }
-        }
-
-        public void ProcessVideo(string videoName)
-        {
-            if (CheckAccess())
-            {
-                Console.WriteLine($" Доступ дозволено для {_user.Name}.");
-                GetService().ProcessVideo(videoName);
-            }
-        }
-
-    }
 }

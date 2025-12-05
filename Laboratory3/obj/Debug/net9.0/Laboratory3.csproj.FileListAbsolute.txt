@@ -1,0 +1,5 @@
+/Users/veronikanema/Documents/GitHub/Lab_3/Laboratory3/obj/Debug/net9.0/Laboratory3.GeneratedMSBuildEditorConfig.editorconfig
+/Users/veronikanema/Documents/GitHub/Lab_3/Laboratory3/obj/Debug/net9.0/Laboratory3.AssemblyInfoInputs.cache
+/Users/veronikanema/Documents/GitHub/Lab_3/Laboratory3/obj/Debug/net9.0/Laboratory3.AssemblyInfo.cs
+/Users/veronikanema/Documents/GitHub/Lab_3/Laboratory3/obj/Debug/net9.0/Laboratory3.csproj.CoreCompileInputs.cache
+/Users/veronikanema/Documents/GitHub/Lab_3/Laboratory3/obj/Debug/net9.0/Laboratory3.sourcelink.json
